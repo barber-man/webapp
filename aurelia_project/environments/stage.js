@@ -1,4 +1,6 @@
 export default {
   debug: true,
-  testing: false
+  testing: false,
+  googleAnalyticsId: '',
+  apiBaseUrl: ''
 };

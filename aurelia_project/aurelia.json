@@ -1,5 +1,5 @@
 {
-  "name": "webapp",
+  "name": "tuist-webapp",
   "type": "project:application",
   "platform": {
     "id": "web",
@@ -28,7 +28,6 @@
   "scriptsVendor": {
     "source": [
       "./node_modules/jquery/dist/jquery.min.js",
-      "./node_modules/bootstrap/dist/js/bootstrap.min.js",
       "./node_modules/mobile-detect/mobile-detect.min.js"
     ],
     "dist": "dist/scripts/vendor/"
@@ -42,8 +41,8 @@
   },
   "cssProcessorVendor": {
     "source": [
-      "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-      "./node_modules/font-awesome/css/font-awesome.min.css"
+      "./node_modules/font-awesome/css/font-awesome.min.css",
+      "./node_modules/bootstrap/dist/css/bootstrap.min.css"
     ],
     "dist": "dist/css/vendor/"
   },

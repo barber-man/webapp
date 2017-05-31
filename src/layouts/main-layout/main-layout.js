@@ -3,6 +3,7 @@ import {AppRouter} from 'aurelia-router';
 
 @inject(AppRouter)
 export class MainLayout {
+  @bindable dataViewportTitle;
 
   constructor(appRouter){
     this.appRouter = appRouter;

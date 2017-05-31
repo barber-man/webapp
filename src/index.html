@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
   <head>
     <title>Barberman</title>
     <meta charset="UTF-8">
@@ -12,14 +12,16 @@
     <meta http-equiv="expires" content="0">
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
     <meta http-equiv="pragma" content="no-cache">
-    <meta name="robots" content="noIndex, noFollow" />
-    <meta name="googlebot" content="noIndex, noFollow" />
-    <link rel="icon" href="dist/images/icons/favicon.png?{{fingerprint}}" type="image/x-icon" />
+    <meta name="robots" content="{{robotsTagContent}}" />
+    <meta name="googlebot" content="{{robotsTagContent}}" />
+    <meta name="google-site-verification" content="HDFXR7egazpuM1FCU3GNg7r64o3I706AKd4lHFJH2n4" />
+    <link rel="icon" href="dist/images/icons/icon_32x32.png?{{fingerprint}}" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="dist/css/vendor/vendor.min.css?{{fingerprint}}" />
     <link rel="stylesheet" type="text/css" href="dist/css/app.min.css?{{fingerprint}}" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700" rel="stylesheet">
   </head>
   <body aurelia-app="main">
+    <script src="https://assets.pagar.me/checkout/checkout.js"></script>
     <script src="dist/scripts/vendor/libs.min.js?{{fingerprint}}"></script>
     <script src="dist/scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
   </body>
