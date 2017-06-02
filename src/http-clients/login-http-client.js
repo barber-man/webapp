@@ -9,8 +9,8 @@ export class LoginHttpClient {
 
   auth(username, password){
     return this.baseHttpClient.post('auth/login', {
-      username: username,
-      password: password
+      user: username,
+      pass: password
     });
   }
 }

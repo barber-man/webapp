@@ -1,5 +1,4 @@
 export const storageConstant = {
-  auth: 'Authorization',
-  cart: 'cart',
-  alerts: 'alerts'
+  auth: 'User-Token',
+  apiToken: 'Api-Token'
 }
