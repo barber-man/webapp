@@ -1,0 +1,29 @@
+<template>
+	<div class="modal-overlayer">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header" if.bind="modalTitle">
+					<h4 class="modal-title">${modalTitle}</h4>
+				</div>
+				<div class="modal-body">
+					<slot name="modal-body"></slot>
+				</div>
+				<div class="modal-footer">
+					<button 
+						type="button" 
+						class="btn ${successClass} success-button" 
+						if.bind="successButton" 
+						click.delegate="success()"
+					>${successText}</button>
+
+					<button 
+						type="button" 
+						class="btn ${cancelClass} cancel-button" 
+						if.bind="cancelButton" 
+						click.trigger="close()"
+					>${cancelText}</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</template>

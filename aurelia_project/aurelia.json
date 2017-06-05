@@ -1,12 +1,11 @@
 {
-  "name": "webapp",
+  "name": "barberman-webapp",
   "type": "project:application",
   "platform": {
     "id": "web",
     "displayName": "Web",
-    "output": "scripts",
-    "index": "index.html",
-    "baseDir": "."
+    "output": "dist/scripts",
+    "index": "index.html"
   },
   "transpiler": {
     "id": "babel",
@@ -14,22 +13,54 @@
     "fileExtension": ".js",
     "options": {
       "plugins": [
-        "transform-es2015-modules-amd"
+        "transform-es2015-modules-amd",
+        "istanbul"
       ]
     },
     "source": "src/**/*.js"
   },
   "markupProcessor": {
-    "id": "minimum",
-    "displayName": "Minimal Minification",
+    "id": "none",
+    "displayName": "None",
     "fileExtension": ".html",
     "source": "src/**/*.html"
+  },
+  "scriptsVendor": {
+    "source": [
+      "./node_modules/jquery/dist/jquery.min.js",
+      "./node_modules/mobile-detect/mobile-detect.min.js"
+    ],
+    "dist": "dist/scripts/vendor/"
   },
   "cssProcessor": {
     "id": "stylus",
     "displayName": "Stylus",
     "fileExtension": ".styl",
-    "source": "src/**/*.styl"
+    "source": "src/**/*.styl",
+    "dist": "dist/css/"
+  },
+  "cssProcessorVendor": {
+    "source": [
+      "./node_modules/font-awesome/css/font-awesome.min.css",
+      "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    ],
+    "dist": "dist/css/vendor/"
+  },
+  "cssFontsVendor": {
+    "source": [
+      "./node_modules/font-awesome/fonts/*.*",
+      "./node_modules/bootstrap/dist/fonts/*.*"
+    ],
+    "dist": "dist/css/fonts/"
+  },
+  "images": {
+    "source": "src/images/**/*.*",
+    "dist": "dist/images/"
+  },
+  "index": {
+    "source": "src/index.html",
+    "output": "./index.html",
+    "dist": "./"
   },
   "editor": {
     "id": "sublime",
@@ -42,11 +73,11 @@
   },
   "paths": {
     "root": "src",
-    "resources": "resources",
-    "elements": "resources/elements",
-    "attributes": "resources/attributes",
-    "valueConverters": "resources/value-converters",
-    "bindingBehaviors": "resources/binding-behaviors"
+    "resources": "src/resources",
+    "elements": "src/resources/elements",
+    "attributes": "src/resources/attributes",
+    "valueConverters": "src/resources/value-converters",
+    "bindingBehaviors": "src/resources/binding-behaviors"
   },
   "testFramework": {
     "id": "jasmine",
@@ -57,9 +88,8 @@
       {
         "id": "web",
         "displayName": "Web",
-        "output": "scripts",
-        "index": "index.html",
-        "baseDir": "."
+        "output": "dist/scripts",
+        "index": "index.html"
       }
     ],
     "loader": {
@@ -79,7 +109,8 @@
     },
     "options": {
       "minify": "stage & prod",
-      "sourcemaps": "dev & stage"
+      "sourcemaps": "dev & stage",
+      "rev": "stage & prod"
     },
     "bundles": [
       {
@@ -93,17 +124,18 @@
         "name": "vendor-bundle.js",
         "prepend": [
           "node_modules/bluebird/js/browser/bluebird.core.js",
-          "node_modules/aurelia-cli/lib/resources/scripts/configure-bluebird.js",
-          "node_modules/requirejs/require.js"
+          "scripts/require.js"
         ],
         "dependencies": [
           "aurelia-binding",
           "aurelia-bootstrapper",
           "aurelia-dependency-injection",
           "aurelia-event-aggregator",
+          "aurelia-fetch-client",
           "aurelia-framework",
           "aurelia-history",
           "aurelia-history-browser",
+          "aurelia-http-client",
           "aurelia-loader",
           "aurelia-loader-default",
           "aurelia-logging",
@@ -118,7 +150,13 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
-          "text",
+          "extend",
+          "moment",
+          "numeral",
+          {
+            "name": "text",
+            "path": "../scripts/text"
+          },
           {
             "name": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
@@ -128,6 +166,12 @@
             "name": "aurelia-templating-router",
             "path": "../node_modules/aurelia-templating-router/dist/amd",
             "main": "aurelia-templating-router"
+          },
+          "deepmerge",
+          {
+            "name": "aurelia-google-analytics",
+            "path": "../node_modules/aurelia-google-analytics/dist/amd",
+            "main": "index"
           },
           {
             "name": "aurelia-testing",
