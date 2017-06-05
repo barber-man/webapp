@@ -10,6 +10,7 @@ export class LoginForm {
 	constructor(appRouter, loginService) {
 		this.appRouter = appRouter;
 		this.loginService = loginService;
+		this.submitText = 'Enviar';
 	}
 
 	bind() {
@@ -17,7 +18,12 @@ export class LoginForm {
 	}
 
 	submitLogin() {
-		this.loginService.login(this.username, this.password);
+		this.submitText = 'Enviando...';
+		this.loginService.login(this.username, this.password).then(()=>{
+			this.submitText = 'Enviar';
+		}, () => {
+			this.submitText = 'Enviar';
+		});
 	}
 
 
