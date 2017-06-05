@@ -88,6 +88,7 @@ export class BaseHttpClient {
   interceptRequest(request){
     this.authInterceptor.includeAppTokenOnWebRequestHeader(request);
     this.authInterceptor.includeUserTokenOnWebRequestHeader(request);
+    console.log(request.headers)
     return request;
   }
 

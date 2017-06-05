@@ -29,8 +29,7 @@ export const routes = [
     name: 'home',
     moduleId: './views/home/home',
     nav: true,
-    title: 'Home',
-    isPublic: true
+    title: 'Home'
   },
   {
     route: '/residencias',

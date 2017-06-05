@@ -24,7 +24,7 @@ export class LoginService {
 
   redirectLoggedInUser(){
     let params = this.locationService.getParams();
-    let route = ''
+    let route = '';
     if(params && params.routeRedirect)
       route = params.routeRedirect;
     this.appRouter.navigate(route);
