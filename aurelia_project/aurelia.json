@@ -1,5 +1,5 @@
 {
-  "name": "tuist-webapp",
+  "name": "barberman-webapp",
   "type": "project:application",
   "platform": {
     "id": "web",
