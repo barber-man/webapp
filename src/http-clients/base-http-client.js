@@ -1,7 +1,7 @@
 import {inject} from 'aurelia-framework';
 import {AuthInterceptor} from 'interceptors/auth-interceptor';
 import {ApiService} from 'services/api-service';
-import {LogoutService} from 'services/logout-service';
+import {LogoutService} from '../services/logout-service';
 
 @inject(ApiService, AuthInterceptor, LogoutService)
 export class BaseHttpClient {
@@ -100,10 +100,7 @@ export class BaseHttpClient {
   }
 
   isSuccessfullResponse(response){
-    return response &&
-      response.header &&
-      response.header.httpStatus >= 200 &&
-      response.header.httpStatus < 300;
+    return response && response.error && response.error < 0;
   }
 
   interceptResponse(response){

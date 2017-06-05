@@ -11,7 +11,7 @@ export class AuthInterceptor {
   }
 
   isAccessAuthorized(response){
-    return response && response.header && response.header.httpStatus !== 401;
+    return response && response.error && response.error !== 401;
   }
 
   includeUserTokenOnWebRequestHeader(request){

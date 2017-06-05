@@ -5,13 +5,13 @@ import {storageConstant} from 'constants/storage-constant';
 
 @inject(AppRouter, StorageService)
 export class LogoutService {
-  constructor(appRouter, storageService){
-    this.appRouter = appRouter;
-    this.storageService = storageService;
-  }
+    constructor(appRouter, storageService){
+        this.appRouter = appRouter;
+        this.storageService = storageService;
+    }
 
-  logout(){
-    this.storageService.remove(storageConstant.auth)
-    this.appRouter.navigate('login');
-  }
+    logout(){
+        this.storageService.remove(storageConstant.auth)
+        this.appRouter.navigate('login');
+    }
 }
