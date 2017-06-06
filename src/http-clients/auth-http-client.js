@@ -9,13 +9,18 @@ export class AuthHttpClient {
   }
 
   login(username, password){
-    return this.baseHttpClient.post('auth/login', {
+    return this.baseHttpClient.post('login', {
       user: username,
       pass: password
     });
   }
 
   logout() {
-    return this.baseHttpClient.get('auth/logout');
+    return this.baseHttpClient.get('logout');
   }
+
+  register(user) {
+    return this.baseHttpClient.post('register', user);
+  }
+
 }

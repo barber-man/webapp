@@ -13,7 +13,7 @@ export class BaseHttpClient {
 
   get(resource, data, id, options){
     return this.baseRequest({
-      method: 'get',
+      method: 'GET',
       resource: resource,
       data: data,
       id: id,
@@ -23,7 +23,7 @@ export class BaseHttpClient {
 
   post(resource, data, options){
     return this.baseRequest({
-      method: 'post',
+      method: 'POST',
       resource: resource,
       data: data,
       options: options
@@ -32,7 +32,7 @@ export class BaseHttpClient {
 
   update(resource, id, data, options){
     return this.baseRequest({
-      method: 'put',
+      method: 'PUT',
       resource: resource,
       id: id,
       data: data,
@@ -42,7 +42,7 @@ export class BaseHttpClient {
 
   destroy(resource, id, data, options){
     return this.baseRequest({
-      method: 'delete',
+      method: 'DELETE',
       resource: resource,
       id: id,
       data: data,
@@ -63,6 +63,7 @@ export class BaseHttpClient {
       method: args.method,
       url: this.buildRequestEndpoint(args),
       data: args.data || null,
+      dataType: args.type || 'json',
       success: function(response){
         thisClass.onRequestComplete(response, promise);
       },
@@ -105,7 +106,7 @@ export class BaseHttpClient {
 
   interceptResponse(response){
     if(this.authInterceptor.isAccessAuthorized(response))
-      this.authInterceptor.storeToken(response.header.token);
+      this.authInterceptor.storeToken(response.results.usertoken);
     else
       this.logoutService.logout();
     return response;

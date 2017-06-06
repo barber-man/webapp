@@ -8,6 +8,6 @@ export class UserHttpClient {
   }
 
   validateToken(){
-    return this.baseHttpClient.get('auth/check');
+    return this.baseHttpClient.get('check');
   }
 }
