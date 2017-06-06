@@ -18,4 +18,9 @@ export class AuthHttpClient {
   logout() {
     return this.baseHttpClient.get('logout');
   }
+
+  register(user) {
+    return this.baseHttpClient.post('register', user);
+  }
+
 }

@@ -1,13 +1,15 @@
 import {inject, bindable} from 'aurelia-framework';
 import {AppRouter} from 'aurelia-router';
+import {AuthHttpClient} from 'http-clients/auth-http-client';
 
 
-@inject(AppRouter)
+@inject(AppRouter, AuthHttpClient)
 export class RegisterForm {
 	@bindable register;
 
-	constructor(appRouter) {
+	constructor(appRouter, authHttpClient) {
 		this.appRouter = appRouter;
+		this.authHttpClient = authHttpClient;
 		this.submitText = 'Cadastrar';
 		this.clearRegister()
 	}
@@ -24,7 +26,11 @@ export class RegisterForm {
 
 	submitRegister() {
 		this.submitText = 'Cadastrando...';
-		console.log(this.register);
+		this.registerUser(this.register);
+	}
+
+	registerUser(user) {
+		this.authHttpClient.register(user).then();
 	}
 
 
