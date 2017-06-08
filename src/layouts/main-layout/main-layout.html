@@ -1,13 +1,14 @@
 <template>
-  <require from="resources/elements/footer/footer"></require>
+	<require from="resources/elements/main-header/main-header"></require>
+	<require from="resources/elements/sidebar/sidebar"></require>
 
-  <div class="main-layout-container" data-js="main-layout-container">
-
-    <div class="main-layout-viewport-wrapper">
-      <div class="main-layout-viewport-container">
-        <slot name="main-layout-viewport"></slot>
-      </div>
-    </div>
-    <footer data-type="primary"></footer>
-  </div>
+	<div class="main-layout-container" data-js="main-layout-container">
+		<sidebar data-wrapper=".main-layout-viewport-wrapper"></sidebar>
+		<div class="main-layout-viewport-wrapper content-wrapper">
+			<main-header></main-header>
+			<div class="main-layout-viewport-container">
+				<slot name="main-layout-viewport"></slot>
+			</div>
+		</div>
+	</div>
 </template>

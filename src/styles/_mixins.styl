@@ -59,8 +59,10 @@ transform($property)
 transition(property, time)
   -webkit-transition property time $animation-ease-default
   -moz-transition property time $animation-ease-default
+  -ms-transition property time $animation-ease-default
   -o-transition property time $animation-ease-default
   transition property time $animation-ease-default
+  
 
 breakpoint(size)
   if(size == 'xs')

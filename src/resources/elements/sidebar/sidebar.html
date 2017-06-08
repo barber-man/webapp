@@ -1,0 +1,30 @@
+<template>
+	<require from="resources/elements/logo/logo"></require>
+	<div class="sidebar">
+		<div class="logo">
+			<logo></logo>
+		</div>
+		<ul class="list-group root-menu">
+			<li class="list-group-item">
+				<a href="#">Início</a>
+			</li>
+			<li class="list-group-item dropdown">
+				<a href="#" class="dropdown-toggle"><i class="fa fa-cogs"></i> Administração</a>
+				<ul class="list-group chield-menu">
+					<li class="list-group-item" data-access="5">
+						<a href="#/acesso-entidades">Acessos de Entidades</a>
+					</li>
+					<li class="list-group-item">
+						<a href="#/estabelecimentos">Estabelecimentos</a>
+					</li>
+					<li class="list-group-item">
+						<a href="#/servicos">Serviços</a>
+					</li>
+				</ul>
+			</li>
+			<li class="list-group-item">
+				<a href="#/media">Mídia</a>
+			</li>
+		</ul>
+	</div>
+</template>
