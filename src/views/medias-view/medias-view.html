@@ -1,0 +1,20 @@
+<template>
+	<require from="layouts/main-layout/main-layout"></require>
+	<require from="resources/elements/media-viewer/media-viewer"></require>
+	<main-layout>
+		<div slot="main-layout-viewport">
+			<div class="page-header">
+				<h2>Mídias</h2>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<a href="#" route="/media/upload" class="btn btn-success"><i class="fa fa-plus"></i></a>
+				</div>
+			</div>
+
+			<media-viewer></media-viewer>
+			
+		</div>
+	</div>
+</template>

@@ -21,5 +21,12 @@ export const routes = [
     nav: true,
     title:'Cadastro',
     isPublic: true
+  },
+  {
+    route: 'medias',
+    name: 'medias-view',
+    moduleId: './views/medias-view/medias-view',
+    nav: true,
+    title: 'Mídias'
   }
 ];

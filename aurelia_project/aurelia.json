@@ -28,7 +28,8 @@
   "scriptsVendor": {
     "source": [
       "./node_modules/jquery/dist/jquery.min.js",
-      "./node_modules/mobile-detect/mobile-detect.min.js"
+      "./node_modules/mobile-detect/mobile-detect.min.js",
+      "./node_modules/smartcrop/smartcrop.js"
     ],
     "dist": "dist/scripts/vendor/"
   },
