@@ -43,7 +43,9 @@ export class Sidebar {
 			this.setSizes();
 		});
 
-		$(this.element).off('click', '.toggle-sidebar').on('click', '.toggle-sidebar', (event) => {
+		$(document).off('click', '.toggle-sidebar')
+							.on('click', '.toggle-sidebar', (event) => {
+			console.log('toggle-sidebar')
 			event.preventDefault();
 			this.el.toggleClass('active');
 			this.wrapper.toggleClass('opened');
@@ -51,11 +53,14 @@ export class Sidebar {
 
 		$(this.element).off('click', '.list-group-item.dropdown > a')
 							.on('click', '.list-group-item.dropdown > a', function(event) {
+			console.log('dropdown')
 			event.preventDefault();
 			$(this).parent('.dropdown').toggleClass('active');
 		});
 
-		$(this.element).off('click', '.root-menu a:not(.dropdown-toggle)').on('click', '.root-menu a:not(.dropdown-toggle)', () => {
+		$(this.element).off('click', '.root-menu a:not(.dropdown-toggle)')
+							.on('click', '.root-menu a:not(.dropdown-toggle)', () => {
+			console.log('dropdown.root')
 			this.el.removeClass('active');
 		});
 	}
