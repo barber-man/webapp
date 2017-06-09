@@ -1,9 +1,11 @@
+@require '_mixins'
+
 .sidebar 
 	position fixed
 	width 260px
 	height 100%
-	min-height300px
-	left-260px
+	min-height 300px
+	left -260px
 	top 0
 	background-color #0b2a41
 	transition(left, .4s)
@@ -45,11 +47,11 @@
 	background-color transparent
 	border none
 	padding 0
-	transition(background-color .4s)
+	transition(background-color, .4s)
 	height 40px
 	overflow hidden
 
-.sidebar .list-group-item.dropdownafter 
+.sidebar .list-group-item.dropdown::after 
 	position absolute
 	right 15px
 	top 18px
@@ -63,36 +65,33 @@
 	border-right 4px solid transparent
 	border-left 4px solid transparent
 	content ''
-	transition(transform .4s)
+	transition(transform, .4s)
 
-.sidebar .list-group-item.dropdown.active:after 
-	-webkit-transform rotate(180deg)
-	-moz-transform rotate(180deg)
-	-ms-transform rotate(180deg)
-	-o-transform rotate(180deg)
-	transform rotate(180deg)
+.sidebar .list-group-item.dropdown.active::after
+	transform('rotate(180deg)')
 
-.sidebar  .list-group-item.dropdown.active 
+.sidebar .list-group-item.dropdown.active
 	height auto
 
-.sidebar > .root-menu > .list-group-itemhover, .sidebar > .root-menu > .list-group-item.active 
+.sidebar > .root-menu > .list-group-itemhover, 
+.sidebar > .root-menu > .list-group-item.active 
 	background-color #00b0ff
 
 .root-menu .chield-menu .list-group-itemhover, .root-menu .chield-menu .list-group-item.active 
 	background-color rgba(0,0,0,.12)
 
-.sidebar  .list-group-item a i.fa, .sidebar  .list-group-item a i.glyphicon 
+.sidebar .list-group-item a i.fa, .sidebar .list-group-item a i.glyphicon
 	margin-right 8px
 
-.sidebar .list-group-item a 
+.sidebar .list-group-item a
 	position relative
 	display block
 	color #fafafa
 	text-decoration none
 	padding 10px 15px
 
-.sidebar -webkit-scrollbar 
+.sidebar ::-webkit-scrollbar
 	width 10px
 
-.sidebar ::-webkit-scrollbar-thumb 
+.sidebar ::-webkit-scrollbar-thumb
 	background-color rgba(0,0,0,.4)
