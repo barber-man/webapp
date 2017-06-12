@@ -28,5 +28,12 @@ export const routes = [
     moduleId: './views/medias-view/medias-view',
     nav: true,
     title: 'Mídias'
+  },
+  {
+    route: 'medias/upload',
+    name: 'media-upload',
+    moduleId: './views/medias-upload/medias-upload',
+    nav: true,
+    title: 'Upload'
   }
 ];

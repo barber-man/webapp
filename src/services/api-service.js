@@ -8,4 +8,8 @@ export class ApiService {
   getApiToken() {
     return environment.apiToken;
   }
+
+  buildUrl(uri) {
+  	return this.getDefaultApiBaseUrl() + '/' + uri;
+  }
 }
